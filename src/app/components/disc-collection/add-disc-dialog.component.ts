@@ -27,6 +27,23 @@ interface AddDiscDialogData {
 })
 export class AddDiscDialogComponent {
   form: FormGroup;
+  colors: { name: string; hex: string }[] = [
+    { name: 'Red', hex: '#FF0000' },
+    { name: 'Blue', hex: '#0000FF' },
+    { name: 'Green', hex: '#008000' },
+    { name: 'Yellow', hex: '#FFFF00' },
+    { name: 'Purple', hex: '#800080' },
+    { name: 'Orange', hex: '#FFA500' },
+    { name: 'Black', hex: '#000000' },
+    { name: 'White', hex: '#FFFFFF' },
+    { name: 'Grey', hex: '#808080' },
+    { name: 'Pink', hex: '#FFC0CB' },
+    { name: 'Brown', hex: '#A52A2A' },
+    { name: 'Turquoise', hex: '#40E0D0' },
+    { name: 'Gold', hex: '#FFD700' },
+    { name: 'Silver', hex: '#C0C0C0' },
+    { name: 'Bronze', hex: '#CD7F32' }
+  ];
 
   constructor(
     public dialogRef: MatDialogRef<AddDiscDialogComponent>,
@@ -37,7 +54,7 @@ export class AddDiscDialogComponent {
       manufacturer: ['', Validators.required],
       model: ['', Validators.required],
       type: ['', Validators.required],
-      color: ['', Validators.required],
+      color: [this.colors[0].hex, Validators.required],
       condition: ['', Validators.required],
       notes: [''],
     });

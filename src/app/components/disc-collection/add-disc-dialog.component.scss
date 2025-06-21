@@ -13,6 +13,20 @@ mat-select {
   width: 100%;
 }
 
+.color-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .color-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    display: inline-block;
+  }
+}
+
 .dialog-actions {
   display: flex;
   justify-content: flex-end;

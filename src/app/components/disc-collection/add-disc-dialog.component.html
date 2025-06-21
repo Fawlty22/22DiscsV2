@@ -23,7 +23,14 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Color</mat-label>
-      <input matInput formControlName="color" required />
+      <mat-select formControlName="color" required>
+        <mat-option *ngFor="let color of colors" [value]="color.hex">
+          <span class="color-option">
+            <span class="color-swatch" [style.background-color]="color.hex"></span>
+            {{ color.name }}
+          </span>
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
