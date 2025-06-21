@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -20,4 +21,10 @@ import { MatDividerModule } from '@angular/material/divider';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent { }
+export class HeaderComponent {
+  constructor(private router: Router) {}
+
+  navigateToCollection(): void {
+    this.router.navigate(['/collection']);
+  }
+}
