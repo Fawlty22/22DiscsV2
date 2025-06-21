@@ -1,0 +1,104 @@
+.container {
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+
+  mat-form-field {
+    width: 200px;
+  }
+
+  form {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+  }
+
+  button {
+    margin-left: 16px;
+  }
+}
+
+.disc-card {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+  color: white;
+
+  mat-card-header {
+    padding: 16px;
+  }
+
+  .disc-card-content {
+    flex-grow: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  mat-card-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  mat-card-subtitle {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+    margin-bottom: 8px;
+  }
+
+  .disc-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .disc-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .disc-condition {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .disc-color {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .disc-notes {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+    margin-top: 8px;
+  }
+
+  mat-card-actions {
+    padding: 8px 16px;
+    justify-content: flex-end;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.no-discs {
+  text-align: center;
+  padding: 24px;
+  color: rgba(0, 0, 0, 0.54);
+}

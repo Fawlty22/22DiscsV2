@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="filters">
+    <form [formGroup]="filterForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Filter by Type</mat-label>
+        <mat-select formControlName="type">
+          <mat-option value="">All Types</mat-option>
+          <mat-option value="distance">Distance Driver</mat-option>
+          <mat-option value="fairway">Fairway Driver</mat-option>
+          <mat-option value="midrange">Midrange</mat-option>
+          <mat-option value="putter">Putter</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Filter by Condition</mat-label>
+        <mat-select formControlName="condition">
+          <mat-option value="">All Conditions</mat-option>
+          <mat-option value="new">New</mat-option>
+          <mat-option value="mint">Mint</mat-option>
+          <mat-option value="good">Good</mat-option>
+          <mat-option value="used">Used</mat-option>
+          <mat-option value="damaged">Damaged</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" (click)="openAddDialog()">
+      <mat-icon>add</mat-icon>
+      Add Disc
+    </button>
+  </div>
+
+  <mat-grid-list cols="3" rowHeight="2:1" *ngIf="getFilteredDiscs().length > 0">
+    <mat-grid-tile *ngFor="let disc of getFilteredDiscs()">
+      <mat-card class="disc-card">
+        <mat-card-header>
+          <mat-card-title
+            >{{ disc.manufacturer }} {{ disc.model }}</mat-card-title
+          >
+          <mat-card-subtitle>{{ disc.type }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="disc-info">
+            <p><strong>Color:</strong> {{ disc.color }}</p>
+            <p><strong>Condition:</strong> {{ disc.condition }}</p>
+            <p *ngIf="disc.notes"><strong>Notes:</strong> {{ disc.notes }}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-icon-button (click)="removeDisc(disc.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="no-discs" *ngIf="getFilteredDiscs().length === 0">
+    <p>No discs found matching the filters.</p>
+  </div>
+</div>

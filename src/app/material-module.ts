@@ -18,10 +18,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   imports: [
     CommonModule,
+    MatGridListModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
@@ -56,6 +58,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatCheckboxModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    MatGridListModule,
   ],
 })
 export class MaterialModule {}

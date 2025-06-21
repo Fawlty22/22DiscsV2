@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Add Disc</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Manufacturer</mat-label>
+      <input matInput formControlName="manufacturer" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Model</mat-label>
+      <input matInput formControlName="model" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type" required>
+        <mat-option value="distance">Distance Driver</mat-option>
+        <mat-option value="fairway">Fairway Driver</mat-option>
+        <mat-option value="midrange">Midrange</mat-option>
+        <mat-option value="putter">Putter</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Color</mat-label>
+      <input matInput formControlName="color" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Condition</mat-label>
+      <mat-select formControlName="condition" required>
+        <mat-option value="new">New</mat-option>
+        <mat-option value="mint">Mint</mat-option>
+        <mat-option value="good">Good</mat-option>
+        <mat-option value="used">Used</mat-option>
+        <mat-option value="damaged">Damaged</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Notes</mat-label>
+      <textarea matInput formControlName="notes"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="formData" cdkFocusInitial>Save</button>
+</div>

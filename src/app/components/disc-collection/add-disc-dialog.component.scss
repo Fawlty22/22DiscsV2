@@ -1,0 +1,67 @@
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-select {
+  width: 100%;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+mat-button {
+  min-width: 80px;
+}
+
+mat-dialog-title {
+  padding: 24px 24px 0;
+  text-align: center;
+}
+
+mat-dialog-content {
+  padding: 0 24px 24px;
+}
+
+mat-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-select {
+  width: 100%;
+}
+
+mat-grid-list {
+  width: 100%;
+  height: 100%;
+}
+
+mat-grid-tile {
+  width: 100%;
+  height: 100%;
+}
