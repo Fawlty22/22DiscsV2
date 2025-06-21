@@ -27,4 +27,7 @@ export class HeaderComponent {
   navigateToCollection(): void {
     this.router.navigate(['/collection']);
   }
+  navigateToTrade(): void {
+    this.router.navigate(['/trade-offer']);
+  }
 }
