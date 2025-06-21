@@ -4,5 +4,5 @@ import { DiscCollectionComponent } from './components/disc-collection/disc-colle
 export const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'collection', component: DiscCollectionComponent },
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: '/' },
 ];
