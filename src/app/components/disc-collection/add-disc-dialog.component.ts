@@ -1,7 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MaterialModule } from '../../material-module';
 
 interface AddDiscDialogData {
@@ -34,7 +39,7 @@ export class AddDiscDialogComponent {
       type: ['', Validators.required],
       color: ['', Validators.required],
       condition: ['', Validators.required],
-      notes: ['']
+      notes: [''],
     });
   }
 
