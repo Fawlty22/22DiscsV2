@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -27,10 +32,10 @@ import { TradeOffer } from '../../models/trade-offer.model';
     MatIconModule,
     MatDialogModule,
     MatDividerModule,
-    DiscCollectionComponent
+    DiscCollectionComponent,
   ],
   templateUrl: './trade-offer.component.html',
-  styleUrls: ['./trade-offer.component.scss']
+  styleUrls: ['./trade-offer.component.scss'],
 })
 export class TradeOfferComponent implements OnInit {
   form: FormGroup;
@@ -41,7 +46,7 @@ export class TradeOfferComponent implements OnInit {
     this.form = this.fb.group({
       title: ['', Validators.required],
       description: [''],
-      discs: [[]]
+      discs: [[]],
     });
   }
 
@@ -57,8 +62,8 @@ export class TradeOfferComponent implements OnInit {
         color: '#FF0000',
         condition: 'new',
         notes: 'Brand new, never thrown',
-        dateAdded: new Date()
-      }
+        dateAdded: new Date(),
+      },
     ];
   }
 
@@ -66,7 +71,7 @@ export class TradeOfferComponent implements OnInit {
     if (!this.selectedDiscs.includes(disc)) {
       this.selectedDiscs.push(disc);
       this.form.patchValue({
-        discs: this.selectedDiscs.map(d => d.id)
+        discs: this.selectedDiscs.map((d) => d.id),
       });
     }
   }
@@ -76,7 +81,7 @@ export class TradeOfferComponent implements OnInit {
     if (index > -1) {
       this.selectedDiscs.splice(index, 1);
       this.form.patchValue({
-        discs: this.selectedDiscs.map(d => d.id)
+        discs: this.selectedDiscs.map((d) => d.id),
       });
     }
   }
@@ -91,7 +96,7 @@ export class TradeOfferComponent implements OnInit {
         discs: this.form.value.discs,
         createdAt: new Date(),
         updatedAt: new Date(),
-        status: 'active'
+        status: 'active',
       };
 
       // TODO: Save to backend
