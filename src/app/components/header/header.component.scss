@@ -1,0 +1,29 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
+  .logo-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+}
+
+.app-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-menu-content {
+  min-width: 200px;
+}
