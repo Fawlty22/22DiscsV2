@@ -35,6 +35,11 @@
     <mat-grid-tile *ngFor="let disc of getFilteredDiscs()">
       <mat-card class="disc-card">
         <div class="color-indicator" [style.background-color]="disc.color"></div>
+        <mat-card-actions class="card-actions">
+          <button mat-icon-button (click)="removeDisc(disc.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
         <mat-card-header>
           <mat-card-title
             >{{ disc.manufacturer }} {{ disc.model }}</mat-card-title
